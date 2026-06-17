@@ -35,9 +35,10 @@ class _MonthWeeks {
 
   String get title {
     final date = DateTime(year, month);
-    final raw = DateFormat('LLLL', 'ru').format(date);
+    final raw = DateFormat('LLL', 'ru').format(date);
     if (raw.isEmpty) return '$month';
-    return raw[0].toUpperCase() + raw.substring(1);
+    final trimmed = raw.replaceAll('.', '');
+    return trimmed[0].toUpperCase() + trimmed.substring(1);
   }
 
   bool containsDate(DateTime date) =>
@@ -69,8 +70,10 @@ class LifeMapScreen extends ConsumerStatefulWidget {
 }
 
 class _LifeMapScreenState extends ConsumerState<LifeMapScreen> {
-  static const _cellSize = 16.0;
-  static const _cellGap = 6.0;
+  static const _cellVisualSize = 24.0;
+  static const _cellTapSize = 40.0;
+  static const _cellGap = 4.0;
+  static const _monthsPerRow = 3;
 
   final _listController = ScrollController();
   final _currentMonthKey = GlobalKey();
@@ -241,16 +244,7 @@ class _LifeMapScreenState extends ConsumerState<LifeMapScreen> {
                   style: Theme.of(context).textTheme.bodyMedium,
                 )
               else
-                ...months.asMap().entries.map((entry) {
-                  final index = entry.key;
-                  final month = entry.value;
-                  final isCurrentMonth = index == currentMonthKey;
-
-                  return KeyedSubtree(
-                    key: isCurrentMonth ? _currentMonthKey : null,
-                    child: _monthSection(context, month, isCurrentMonth),
-                  );
-                }),
+                _monthsGrid(context, months, currentMonthKey),
             ],
           );
         },
@@ -310,62 +304,116 @@ class _LifeMapScreenState extends ConsumerState<LifeMapScreen> {
     );
   }
 
-  Widget _monthSection(
+  Widget _monthsGrid(
+    BuildContext context,
+    List<_MonthWeeks> months,
+    int currentMonthKey,
+  ) {
+    final rows = <Widget>[];
+
+    for (var rowStart = 0; rowStart < months.length; rowStart += _monthsPerRow) {
+      final rowEnd = (rowStart + _monthsPerRow).clamp(0, months.length);
+      final rowMonths = months.sublist(rowStart, rowEnd);
+
+      rows.add(
+        Padding(
+          padding: const EdgeInsets.only(bottom: 12),
+          child: IntrinsicHeight(
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
+              children: [
+                for (var col = 0; col < _monthsPerRow; col++)
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.only(
+                        left: col == 0 ? 0 : 4,
+                        right: col == _monthsPerRow - 1 ? 0 : 4,
+                      ),
+                      child: col < rowMonths.length
+                          ? KeyedSubtree(
+                              key: rowStart + col == currentMonthKey
+                                  ? _currentMonthKey
+                                  : null,
+                              child: _monthCard(
+                                context,
+                                rowMonths[col],
+                                rowStart + col == currentMonthKey,
+                              ),
+                            )
+                          : const SizedBox.shrink(),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+        ),
+      );
+    }
+
+    return Column(children: rows);
+  }
+
+  Widget _monthCard(
     BuildContext context,
     _MonthWeeks month,
     bool isCurrentMonth,
   ) {
-    return Padding(
-      padding: const EdgeInsets.only(bottom: 20),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Row(
-            children: [
-              Text(
-                month.title,
-                style: Theme.of(context).textTheme.titleSmall?.copyWith(
-                      fontWeight: FontWeight.w600,
-                      color: isCurrentMonth ? QadamTheme.primary : null,
-                    ),
-              ),
-              if (isCurrentMonth) ...[
-                const SizedBox(width: 8),
-                Container(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-                  decoration: BoxDecoration(
-                    color: QadamTheme.primary.withValues(alpha: 0.12),
-                    borderRadius: BorderRadius.circular(8),
+    final borderColor = isCurrentMonth
+        ? QadamTheme.primary
+        : Theme.of(context).dividerColor.withValues(alpha: 0.55);
+
+    return DecoratedBox(
+      decoration: BoxDecoration(
+        color: isCurrentMonth
+            ? QadamTheme.primary.withValues(alpha: 0.07)
+            : Theme.of(context).colorScheme.surfaceContainerHighest
+                .withValues(alpha: 0.35),
+        borderRadius: BorderRadius.circular(12),
+        border: Border.all(
+          color: borderColor,
+          width: isCurrentMonth ? 2 : 1,
+        ),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(8, 10, 8, 10),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: [
+            Text(
+              month.title,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.labelLarge?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: isCurrentMonth ? QadamTheme.primary : null,
                   ),
-                  child: Text(
-                    'сейчас',
-                    style: Theme.of(context).textTheme.labelSmall?.copyWith(
-                          color: QadamTheme.primary,
-                          fontWeight: FontWeight.w600,
-                        ),
-                  ),
+            ),
+            if (isCurrentMonth)
+              Padding(
+                padding: const EdgeInsets.only(top: 2),
+                child: Text(
+                  'сейчас',
+                  textAlign: TextAlign.center,
+                  style: Theme.of(context).textTheme.labelSmall?.copyWith(
+                        color: QadamTheme.primary,
+                        fontWeight: FontWeight.w600,
+                      ),
                 ),
-              ],
-              const Spacer(),
-              Text(
-                '${month.weeks.length} нед.',
-                style: Theme.of(context).textTheme.labelMedium,
               ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          QadamSoftCard(
-            padding: const EdgeInsets.all(12),
-            child: Wrap(
+            Padding(
+              padding: const EdgeInsets.symmetric(vertical: 8),
+              child: Divider(
+                height: 1,
+                color: borderColor.withValues(alpha: isCurrentMonth ? 0.35 : 0.5),
+              ),
+            ),
+            Wrap(
+              alignment: WrapAlignment.center,
               spacing: _cellGap,
               runSpacing: _cellGap,
-              children: month.weeks.map((week) {
-                return _weekCell(context, week);
-              }).toList(),
+              children: month.weeks.map((week) => _weekCell(context, week)).toList(),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
@@ -377,21 +425,39 @@ class _LifeMapScreenState extends ConsumerState<LifeMapScreen> {
         '${DateFormat('d MMM', 'ru').format(week.weekStart)} — '
         '${DateFormat('d MMM', 'ru').format(rangeEnd)}';
 
-    return GestureDetector(
-      onTap: isFuture
-          ? null
-          : () => context.push('/week/${week.weekIndex}'),
-      child: Tooltip(
-        message: 'Неделя ${week.weekIndex + 1}\n$rangeLabel',
-        child: Container(
-          width: _cellSize,
-          height: _cellSize,
-          decoration: BoxDecoration(
-            color: weekStatusColor(week.status),
-            borderRadius: BorderRadius.circular(4),
-            border: week.status == WeekStatus.current
-                ? Border.all(color: QadamTheme.weekCurrent, width: 1.5)
-                : null,
+    return Material(
+      color: Colors.transparent,
+      child: InkWell(
+        onTap: isFuture ? null : () => context.push('/week/${week.weekIndex}'),
+        borderRadius: BorderRadius.circular(8),
+        child: SizedBox(
+          width: _cellTapSize,
+          height: _cellTapSize,
+          child: Center(
+            child: Tooltip(
+              message: 'Неделя ${week.weekIndex + 1}\n$rangeLabel',
+              child: Container(
+                width: _cellVisualSize,
+                height: _cellVisualSize,
+                decoration: BoxDecoration(
+                  color: weekStatusColor(week.status),
+                  borderRadius: BorderRadius.circular(5),
+                  border: week.status == WeekStatus.current
+                      ? Border.all(color: QadamTheme.weekCurrent, width: 2)
+                      : Border.all(
+                          color: Colors.black.withValues(alpha: 0.06),
+                          width: 0.5,
+                        ),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.black.withValues(alpha: 0.04),
+                      blurRadius: 1,
+                      offset: const Offset(0, 1),
+                    ),
+                  ],
+                ),
+              ),
+            ),
           ),
         ),
       ),
