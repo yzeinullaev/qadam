@@ -1,0 +1,30 @@
+name: Qadam
+options:
+  bundleIdPrefix: com.qadam
+  deploymentTarget:
+    iOS: "16.0"
+  createIntermediateGroups: true
+packages:
+  Adhan:
+    url: https://github.com/batoulapps/adhan-swift
+    from: 1.4.0
+targets:
+  Qadam:
+    type: application
+    platform: iOS
+    sources:
+      - path: Qadam
+    settings:
+      base:
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        PRODUCT_BUNDLE_IDENTIFIER: com.qadam.qadam.native
+        DEVELOPMENT_TEAM: W86PS7HC34
+        INFOPLIST_FILE: Qadam/Info.plist
+        SWIFT_VERSION: "5.9"
+        TARGETED_DEVICE_FAMILY: "1"
+        CODE_SIGN_STYLE: Automatic
+        CURRENT_PROJECT_VERSION: 1
+        MARKETING_VERSION: 1.0
+        GENERATE_INFOPLIST_FILE: NO
+    dependencies:
+      - package: Adhan

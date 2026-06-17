@@ -3302,7 +3302,8 @@ final class $$DayRecordsTableReferences
   static MultiTypedResultKey<$PrayerRecordsTable, List<PrayerRecord>>
       _prayerRecordsRefsTable(_$AppDatabase db) =>
           MultiTypedResultKey.fromTable(db.prayerRecords,
-              aliasName: 'day_records__id__prayer_records__day_record_id');
+              aliasName: $_aliasNameGenerator(
+                  db.dayRecords.id, db.prayerRecords.dayRecordId));
 
   $$PrayerRecordsTableProcessedTableManager get prayerRecordsRefs {
     final manager = $$PrayerRecordsTableTableManager($_db, $_db.prayerRecords)
@@ -3316,7 +3317,8 @@ final class $$DayRecordsTableReferences
   static MultiTypedResultKey<$HabitRecordsTable, List<HabitRecord>>
       _habitRecordsRefsTable(_$AppDatabase db) =>
           MultiTypedResultKey.fromTable(db.habitRecords,
-              aliasName: 'day_records__id__habit_records__day_record_id');
+              aliasName: $_aliasNameGenerator(
+                  db.dayRecords.id, db.habitRecords.dayRecordId));
 
   $$HabitRecordsTableProcessedTableManager get habitRecordsRefs {
     final manager = $$HabitRecordsTableTableManager($_db, $_db.habitRecords)
@@ -3679,8 +3681,9 @@ final class $$PrayerRecordsTableReferences
   $$PrayerRecordsTableReferences(
       super.$_db, super.$_table, super.$_typedResult);
 
-  static $DayRecordsTable _dayRecordIdTable(_$AppDatabase db) => db.dayRecords
-      .createAlias('prayer_records__day_record_id__day_records__id');
+  static $DayRecordsTable _dayRecordIdTable(_$AppDatabase db) =>
+      db.dayRecords.createAlias(
+          $_aliasNameGenerator(db.prayerRecords.dayRecordId, db.dayRecords.id));
 
   $$DayRecordsTableProcessedTableManager get dayRecordId {
     final $_column = $_itemColumn<int>('day_record_id')!;
@@ -3988,8 +3991,9 @@ final class $$HabitRecordsTableReferences
     extends BaseReferences<_$AppDatabase, $HabitRecordsTable, HabitRecord> {
   $$HabitRecordsTableReferences(super.$_db, super.$_table, super.$_typedResult);
 
-  static $DayRecordsTable _dayRecordIdTable(_$AppDatabase db) => db.dayRecords
-      .createAlias('habit_records__day_record_id__day_records__id');
+  static $DayRecordsTable _dayRecordIdTable(_$AppDatabase db) =>
+      db.dayRecords.createAlias(
+          $_aliasNameGenerator(db.habitRecords.dayRecordId, db.dayRecords.id));
 
   $$DayRecordsTableProcessedTableManager get dayRecordId {
     final $_column = $_itemColumn<int>('day_record_id')!;

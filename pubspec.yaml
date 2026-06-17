@@ -33,4 +33,5 @@ dev_dependencies:
   build_runner: ^2.4.13
 
 flutter:
+  disable-swift-package-manager: true
   uses-material-design: true

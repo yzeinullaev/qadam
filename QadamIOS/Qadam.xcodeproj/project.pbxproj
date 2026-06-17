@@ -1,0 +1,317 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		640C8A73E925483CA907DA83 /* CityCoordinates.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19D07D943DCA4B2CA6BA8320 /* CityCoordinates.swift */; };
+		CC446B154C234FC18C904894 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47837564A7DF4AE5A2E585B7 /* Constants.swift */; };
+		37E98C3CA2214350AA6D8A5B /* DayStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6281D1FAEBF448B08B62A4FE /* DayStatus.swift */; };
+		5DF841A15A1C41159265E7B4 /* DayStatusCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B00BED6D197A497291AE29F8 /* DayStatusCalculator.swift */; };
+		0024B551707E40E89219795E /* LifeWeekUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = CDE7064266A944B291E331EA /* LifeWeekUtils.swift */; };
+		5FD18486A1714A4A836BA260 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02E6A33DC8EF446BBEF02305 /* Models.swift */; };
+		F254E75562544307AD709220 /* ScoreCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D747B63224EA47EB96712B41 /* ScoreCalculator.swift */; };
+		486A972F62F2478DBB40CAA1 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A208FD0DEEE94DEC8BD61A95 /* Theme.swift */; };
+		0B73F4B90F84427AA299CABC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE3ECAFF62BF4772A39A487A /* DatabaseManager.swift */; };
+		2C531CD4B35240949D31DFFC /* TrackingSnapshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3974394E27AD46039F9BF03A /* TrackingSnapshot.swift */; };
+		0EBB725B110149878AAFF705 /* QadamApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4175865546F24AF288E51610 /* QadamApp.swift */; };
+		E44FD0B02BED4C61BFF54F72 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D9EC3DBD9624F7EAD6ECC3D /* AppState.swift */; };
+		65352DFCF25E4D02950E99D8 /* LocationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A2F535D06D4F2281EBCCB0 /* LocationService.swift */; };
+		66D8A6F6111C42448E7A4BA2 /* PrayerTimeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0442EEB17F0F495EAD0459E7 /* PrayerTimeService.swift */; };
+		64888B1E190E48DB9B957A28 /* StatsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3B0A6C771D04079B44485E4 /* StatsService.swift */; };
+		8B3025B949F7496CB9F71A1E /* LifeMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8729D659065249D09F1CAB83 /* LifeMapView.swift */; };
+		CF21C2B62A5E42EB8CFB34E7 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C861F2F004B4B97981033AB /* MainTabView.swift */; };
+		114D12EF63DD4B0889356D2C /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADEBBE52F86447DC9A299E94 /* OnboardingView.swift */; };
+		16A7969CF3ED4726B0FBFBE8 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E91312C72C41464DB6DEEE19 /* SettingsView.swift */; };
+		9620BDE3D42E43D8BE11A149 /* StatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95C024779974474C896DA6B5 /* StatsView.swift */; };
+		2960E0F616CA4F5EA30C6E66 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A45C2422D97E42E983CE8600 /* TodayView.swift */; };
+		FC13370929124177B39E92A4 /* WeekDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98517F217F94E25AB8F6A8B /* WeekDetailView.swift */; };
+		DD646D965DAE43A29A3B2B33 /* Adhan in Frameworks */ = {isa = PBXBuildFile; productRef = 83AC5ABFF62547329C77474F /* Adhan */; };
+		47E15B60E19A412A98D8C613 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C4A1E6EFC174709BBCC813E /* Assets.xcassets */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		711AEE76BA9245A597B03AAB /* Qadam.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Qadam.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		19D07D943DCA4B2CA6BA8320 /* CityCoordinates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/CityCoordinates.swift; sourceTree = "<group>"; };
+		47837564A7DF4AE5A2E585B7 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/Constants.swift; sourceTree = "<group>"; };
+		6281D1FAEBF448B08B62A4FE /* DayStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/DayStatus.swift; sourceTree = "<group>"; };
+		B00BED6D197A497291AE29F8 /* DayStatusCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/DayStatusCalculator.swift; sourceTree = "<group>"; };
+		CDE7064266A944B291E331EA /* LifeWeekUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/LifeWeekUtils.swift; sourceTree = "<group>"; };
+		02E6A33DC8EF446BBEF02305 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/Models.swift; sourceTree = "<group>"; };
+		D747B63224EA47EB96712B41 /* ScoreCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/ScoreCalculator.swift; sourceTree = "<group>"; };
+		A208FD0DEEE94DEC8BD61A95 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Core/Theme.swift; sourceTree = "<group>"; };
+		AE3ECAFF62BF4772A39A487A /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Data/DatabaseManager.swift; sourceTree = "<group>"; };
+		3974394E27AD46039F9BF03A /* TrackingSnapshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Data/TrackingSnapshot.swift; sourceTree = "<group>"; };
+		4175865546F24AF288E51610 /* QadamApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/QadamApp.swift; sourceTree = "<group>"; };
+		1D9EC3DBD9624F7EAD6ECC3D /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Services/AppState.swift; sourceTree = "<group>"; };
+		03A2F535D06D4F2281EBCCB0 /* LocationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Services/LocationService.swift; sourceTree = "<group>"; };
+		0442EEB17F0F495EAD0459E7 /* PrayerTimeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Services/PrayerTimeService.swift; sourceTree = "<group>"; };
+		A3B0A6C771D04079B44485E4 /* StatsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Services/StatsService.swift; sourceTree = "<group>"; };
+		8729D659065249D09F1CAB83 /* LifeMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/LifeMapView.swift; sourceTree = "<group>"; };
+		0C861F2F004B4B97981033AB /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/MainTabView.swift; sourceTree = "<group>"; };
+		ADEBBE52F86447DC9A299E94 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/OnboardingView.swift; sourceTree = "<group>"; };
+		E91312C72C41464DB6DEEE19 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/SettingsView.swift; sourceTree = "<group>"; };
+		95C024779974474C896DA6B5 /* StatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/StatsView.swift; sourceTree = "<group>"; };
+		A45C2422D97E42E983CE8600 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/TodayView.swift; sourceTree = "<group>"; };
+		B98517F217F94E25AB8F6A8B /* WeekDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Qadam/Views/WeekDetailView.swift; sourceTree = "<group>"; };
+		531602D180AA4405B3DF7638 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Qadam/Info.plist; sourceTree = "<group>"; };
+		4C4A1E6EFC174709BBCC813E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Qadam/Assets.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		CB51C13B99284B62810282C9 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD646D965DAE43A29A3B2B33 /* Adhan in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6AB966DCD0D34379A2E21B7A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				711AEE76BA9245A597B03AAB /* Qadam.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9C8DEAB41C294FD58AF495F6 /* Qadam */ = {
+			isa = PBXGroup;
+			children = (
+				4C4A1E6EFC174709BBCC813E /* Assets.xcassets */,
+				19D07D943DCA4B2CA6BA8320 /* CityCoordinates.swift */,
+				47837564A7DF4AE5A2E585B7 /* Constants.swift */,
+				6281D1FAEBF448B08B62A4FE /* DayStatus.swift */,
+				B00BED6D197A497291AE29F8 /* DayStatusCalculator.swift */,
+				CDE7064266A944B291E331EA /* LifeWeekUtils.swift */,
+				02E6A33DC8EF446BBEF02305 /* Models.swift */,
+				D747B63224EA47EB96712B41 /* ScoreCalculator.swift */,
+				A208FD0DEEE94DEC8BD61A95 /* Theme.swift */,
+				AE3ECAFF62BF4772A39A487A /* DatabaseManager.swift */,
+				3974394E27AD46039F9BF03A /* TrackingSnapshot.swift */,
+				531602D180AA4405B3DF7638 /* Info.plist */,
+				4175865546F24AF288E51610 /* QadamApp.swift */,
+				1D9EC3DBD9624F7EAD6ECC3D /* AppState.swift */,
+				03A2F535D06D4F2281EBCCB0 /* LocationService.swift */,
+				0442EEB17F0F495EAD0459E7 /* PrayerTimeService.swift */,
+				A3B0A6C771D04079B44485E4 /* StatsService.swift */,
+				8729D659065249D09F1CAB83 /* LifeMapView.swift */,
+				0C861F2F004B4B97981033AB /* MainTabView.swift */,
+				ADEBBE52F86447DC9A299E94 /* OnboardingView.swift */,
+				E91312C72C41464DB6DEEE19 /* SettingsView.swift */,
+				95C024779974474C896DA6B5 /* StatsView.swift */,
+				A45C2422D97E42E983CE8600 /* TodayView.swift */,
+				B98517F217F94E25AB8F6A8B /* WeekDetailView.swift */,
+			);
+			name = Qadam;
+			sourceTree = "<group>";
+		};
+		D78B8A39DA4444EF8A180358 = {
+			isa = PBXGroup;
+			children = (
+				9C8DEAB41C294FD58AF495F6 /* Qadam */,
+				6AB966DCD0D34379A2E21B7A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F830B984A3944DB841C47DE /* Qadam */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 64F2B4363E514A1E9A2FC36F;
+			buildPhases = (
+				8DC2A80C30DC4DFA81F5ADDA /* Sources */,
+				CB51C13B99284B62810282C9 /* Frameworks */,
+				515FD171F04E486E859840F7 /* Resources */,
+			);
+			buildRules = ();
+			dependencies = ();
+			name = Qadam;
+			packageProductDependencies = (83AC5ABFF62547329C77474F /* Adhan */);
+			productName = Qadam;
+			productReference = 711AEE76BA9245A597B03AAB;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		26BE4435AED0474683BA8947 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+			};
+			buildConfigurationList = E94780BB6526473FBFC2EC05;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = ru;
+			hasScannedForEncodings = 0;
+			knownRegions = (ru, Base);
+			mainGroup = D78B8A39DA4444EF8A180358;
+			packageReferences = (1FD0CA3BCC4943A4B8C6B011 /* adhan-swift */);
+			productRefGroup = 6AB966DCD0D34379A2E21B7A;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (4F830B984A3944DB841C47DE);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		515FD171F04E486E859840F7 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				47E15B60E19A412A98D8C613 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DC2A80C30DC4DFA81F5ADDA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				640C8A73E925483CA907DA83 /* CityCoordinates.swift in Sources */,
+				CC446B154C234FC18C904894 /* Constants.swift in Sources */,
+				37E98C3CA2214350AA6D8A5B /* DayStatus.swift in Sources */,
+				5DF841A15A1C41159265E7B4 /* DayStatusCalculator.swift in Sources */,
+				0024B551707E40E89219795E /* LifeWeekUtils.swift in Sources */,
+				5FD18486A1714A4A836BA260 /* Models.swift in Sources */,
+				F254E75562544307AD709220 /* ScoreCalculator.swift in Sources */,
+				486A972F62F2478DBB40CAA1 /* Theme.swift in Sources */,
+				0B73F4B90F84427AA299CABC /* DatabaseManager.swift in Sources */,
+				2C531CD4B35240949D31DFFC /* TrackingSnapshot.swift in Sources */,
+				0EBB725B110149878AAFF705 /* QadamApp.swift in Sources */,
+				E44FD0B02BED4C61BFF54F72 /* AppState.swift in Sources */,
+				65352DFCF25E4D02950E99D8 /* LocationService.swift in Sources */,
+				66D8A6F6111C42448E7A4BA2 /* PrayerTimeService.swift in Sources */,
+				64888B1E190E48DB9B957A28 /* StatsService.swift in Sources */,
+				8B3025B949F7496CB9F71A1E /* LifeMapView.swift in Sources */,
+				CF21C2B62A5E42EB8CFB34E7 /* MainTabView.swift in Sources */,
+				114D12EF63DD4B0889356D2C /* OnboardingView.swift in Sources */,
+				16A7969CF3ED4726B0FBFBE8 /* SettingsView.swift in Sources */,
+				9620BDE3D42E43D8BE11A149 /* StatsView.swift in Sources */,
+				2960E0F616CA4F5EA30C6E66 /* TodayView.swift in Sources */,
+				FC13370929124177B39E92A4 /* WeekDetailView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3024D975A5774ADB8251FD4E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_TESTABILITY = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		72B82E18605546A9B8BFA249 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		FC7D663213C3407D8012DA22 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W86PS7HC34;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Qadam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qadam.qadam.native;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		95C0C1B58B9E4C649553F52D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = W86PS7HC34;
+				GENERATE_INFOPLIST_FILE = NO;
+				INFOPLIST_FILE = Qadam/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				LD_RUNPATH_SEARCH_PATHS = ("$(inherited)", "@executable_path/Frameworks");
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qadam.qadam.native;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E94780BB6526473FBFC2EC05 = {
+			isa = XCConfigurationList;
+			buildConfigurations = (3024D975A5774ADB8251FD4E, 72B82E18605546A9B8BFA249);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		64F2B4363E514A1E9A2FC36F = {
+			isa = XCConfigurationList;
+			buildConfigurations = (FC7D663213C3407D8012DA22, 95C0C1B58B9E4C649553F52D);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		1FD0CA3BCC4943A4B8C6B011 = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/batoulapps/adhan-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.4.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		83AC5ABFF62547329C77474F /* Adhan */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1FD0CA3BCC4943A4B8C6B011;
+			productName = Adhan;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 26BE4435AED0474683BA8947;
+}

@@ -2,15 +2,25 @@ import Flutter
 import UIKit
 
 @main
-@objc class AppDelegate: FlutterAppDelegate, FlutterImplicitEngineDelegate {
+@objc class AppDelegate: FlutterAppDelegate {
+  private lazy var flutterEngine = FlutterEngine(name: "qadam")
+
   override func application(
     _ application: UIApplication,
     didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
   ) -> Bool {
-    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
-  }
+    flutterEngine.run()
+    GeneratedPluginRegistrant.register(with: flutterEngine)
 
-  func didInitializeImplicitFlutterEngine(_ engineBridge: FlutterImplicitEngineBridge) {
-    GeneratedPluginRegistrant.register(with: engineBridge.pluginRegistry)
+    let controller = FlutterViewController(
+      engine: flutterEngine,
+      nibName: nil,
+      bundle: nil
+    )
+    window = UIWindow(frame: UIScreen.main.bounds)
+    window?.rootViewController = controller
+    window?.makeKeyAndVisible()
+
+    return super.application(application, didFinishLaunchingWithOptions: launchOptions)
   }
 }

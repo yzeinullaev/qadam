@@ -267,47 +267,43 @@ class _SettingsScreenState extends ConsumerState<SettingsScreen> {
             children: [
               QadamSoftCard(
                 padding: const EdgeInsets.all(8),
-                child: RadioGroup<String>(
-                  groupValue: _profile?.calculationMethod,
-                  onChanged: (v) => _updatePrayerMethod(v!),
-                  child: Column(
-                    children: AppConstants.calculationMethods
-                        .map(
-                          (m) => RadioListTile<String>(
-                            title: Text(m, style: const TextStyle(fontSize: 14)),
-                            value: m,
-                            dense: true,
-                          ),
-                        )
-                        .toList(),
-                  ),
+                child: Column(
+                  children: AppConstants.calculationMethods
+                      .map(
+                        (m) => RadioListTile<String>(
+                          title: Text(m, style: const TextStyle(fontSize: 14)),
+                          value: m,
+                          groupValue: _profile?.calculationMethod,
+                          onChanged: (v) => _updatePrayerMethod(v!),
+                          dense: true,
+                        ),
+                      )
+                      .toList(),
                 ),
               ),
               const SizedBox(height: 8),
               QadamSoftCard(
                 padding: const EdgeInsets.all(8),
-                child: RadioGroup<String>(
-                  groupValue: _profile?.asrMadhab,
-                  onChanged: (v) => _updateAsrMadhab(v!),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Padding(
-                        padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
-                        child: Text(
-                          'Мазхаб для Аср',
-                          style: Theme.of(context).textTheme.titleSmall,
-                        ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.fromLTRB(16, 8, 16, 0),
+                      child: Text(
+                        'Мазхаб для Аср',
+                        style: Theme.of(context).textTheme.titleSmall,
                       ),
-                      ...AppConstants.asrMadhabOptions.map(
-                        (m) => RadioListTile<String>(
-                          title: Text(m, style: const TextStyle(fontSize: 14)),
-                          value: m,
-                          dense: true,
-                        ),
+                    ),
+                    ...AppConstants.asrMadhabOptions.map(
+                      (m) => RadioListTile<String>(
+                        title: Text(m, style: const TextStyle(fontSize: 14)),
+                        value: m,
+                        groupValue: _profile?.asrMadhab,
+                        onChanged: (v) => _updateAsrMadhab(v!),
+                        dense: true,
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
             ],
